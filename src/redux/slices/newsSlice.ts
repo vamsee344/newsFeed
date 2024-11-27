@@ -1,18 +1,24 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import { fetchArticles } from '../../api/newsApi';
+import { Article } from '../../types';
 
-export const loadArticles = createAsyncThunk('news/loadArticles', async () => {
-  const articles = await fetchArticles();
-  return articles;
-});
+export const loadArticles = createAsyncThunk('news/loadArticles', fetchArticles);
+
+type NewsState = {
+  articles: Article[];
+  loading: boolean;
+  error: string | null;
+};
+
+const initialState: NewsState = {
+  articles: [],
+  loading: false,
+  error: null,
+};
 
 const newsSlice = createSlice({
   name: 'news',
-  initialState: {
-    articles: [],
-    loading: false,
-    error: null,
-  },
+  initialState,
   reducers: {},
   extraReducers: (builder) => {
     builder

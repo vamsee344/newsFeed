@@ -1,24 +1,23 @@
 import React from 'react';
-import {View, Text, StyleSheet} from 'react-native';
-import {useNetInfo} from '@react-native-community/netinfo';
+import { View, Text, StyleSheet } from 'react-native';
+import { useSelector } from 'react-redux';
+import { RootState } from '../redux/store';
 
 const OfflineIndicator: React.FC = () => {
-  const netInfo = useNetInfo();
+  const isOffline = useSelector((state: RootState) => state.ui.isOffline);
 
-  if (!netInfo.isConnected) {
-    return (
-      <View style={styles.container}>
-        <Text style={styles.text}>You are offline</Text>
-      </View>
-    );
-  }
+  if (!isOffline) return null;
 
-  return null;
+  return (
+    <View style={styles.container}>
+      <Text style={styles.text}>You are offline</Text>
+    </View>
+  );
 };
 
 const styles = StyleSheet.create({
-  container: {backgroundColor: 'red', padding: 5},
-  text: {color: 'white', textAlign: 'center'},
+  container: { backgroundColor: 'red', padding: 10 },
+  text: { color: '#fff', textAlign: 'center' },
 });
 
 export default OfflineIndicator;
