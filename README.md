@@ -14,7 +14,7 @@ This is a React Native project that fetches and displays news articles from an e
 5. [Troubleshooting](#troubleshooting)
 6. [License](#license)
 
-## Setup Instructions
+
 
 ### Prerequisites
 
@@ -27,13 +27,14 @@ Before getting started, make sure you have the following installed:
 
 Make sure to complete the setup instructions in the [React Native Environment Setup](https://reactnative.dev/docs/environment-setup) guide before proceeding.
 
+## Setup Instructions
 ### Step 1: Clone the Repository
 
 First, clone the repository to your local machine:
 
 ```bash
-git clone https://github.com/yourusername/react-native-news-app.git
-cd react-native-news-app
+git clone https://github.com/vamsee344/newsFeed.git
+cd newsFeed
 ```
 
 ### Step 2: Install Dependencies

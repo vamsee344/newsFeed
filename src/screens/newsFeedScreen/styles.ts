@@ -12,7 +12,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
   },
   errorContainer: {
-    marginTop: 20,
+    margin: 20,
     alignItems: 'center',
   },
   errorText: {
