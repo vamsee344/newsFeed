@@ -1,9 +1,10 @@
 import React from 'react';
-import { View, Text, StyleSheet, Image, Button, ScrollView } from 'react-native';
+import { View, Text, Image, ScrollView, Button } from 'react-native';
 import { RouteProp } from '@react-navigation/native';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
-import { RootStackParamList } from '../types';
-import Share from 'react-native-share'; // For sharing functionality
+import { RootStackParamList } from '../../types';
+import Share from 'react-native-share';
+import styles from './styles';
 
 type ArticleDetailScreenProps = {
   route: RouteProp<RootStackParamList, 'ArticleDetail'>;
@@ -37,34 +38,4 @@ const ArticleDetailScreen: React.FC<ArticleDetailScreenProps> = ({ route, naviga
     </ScrollView>
   );
 };
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    padding: 10,
-    backgroundColor: '#fff',
-  },
-  image: {
-    width: '100%',
-    height: 200,
-    borderRadius: 8,
-    marginBottom: 10,
-  },
-  title: {
-    fontSize: 20,
-    fontWeight: 'bold',
-    marginBottom: 10,
-  },
-  content: {
-    fontSize: 16,
-    color: '#333',
-    lineHeight: 24,
-    marginBottom: 20,
-  },
-  buttonContainer: {
-    flexDirection: 'row',
-    justifyContent: 'space-around',
-  },
-});
-
 export default ArticleDetailScreen;
